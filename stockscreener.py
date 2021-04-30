@@ -9,6 +9,7 @@ yf.pdr_override()
 stock=input("Enter a stock ticker symbol: ")
 print(stock)
 
+#timestart
 startyear=2019
 startmonth=1
 startday=1
@@ -20,7 +21,7 @@ now=dt.datetime.now()
 df=pdr.get_data_yahoo(stock,start,now)
 
 
-
+#MAV input 
 ma=50
 smaString="Sma_" +str(ma)
 
@@ -32,6 +33,7 @@ df=df.iloc[ma:]
 numH=0
 numC=0
 
+#hilo definitions
 for i in df.index:
     if(df["Adj Close"][i]>df[smaString][i]):
         print("The Close is higher")
